@@ -4,11 +4,14 @@ public class Main {
     public static void main(String[] args) {
         Device tv = new TV2();
         Device radio = new Radio2();
+        Device speaker = new Speaker();
 
         BasicRemote tvBasic = new BasicRemote(tv);
         AdvancedRemote tvAdvanced = new AdvancedRemote(tv);
         BasicRemote radioBasic = new BasicRemote(radio);
         AdvancedRemote radioAdvanced = new AdvancedRemote(radio);
+        BasicRemote speakerBasic = new BasicRemote(speaker);
+        AdvancedRemote speakerAdvanced = new AdvancedRemote(speaker);
 
         // TV remotes
         tvBasic.powerOn();
@@ -23,5 +26,10 @@ public class Main {
         radioAdvanced.powerOn();
         radioAdvanced.setFrequency(104.7);
         radioAdvanced.powerOff();
+
+        // Speaker remotes
+        speakerBasic.powerOn();
+        speakerAdvanced.setVolume(12);
+        speakerAdvanced.powerOff();
     }
 }
