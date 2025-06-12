@@ -2,26 +2,26 @@ package org.lucian.module2.Remotes;
 
 public class Main {
     public static void main(String[] args) {
-        TV tv = new TV();
-        TVBasicRemote tvBasic = new TVBasicRemote(tv);
-        TVAdvancedRemote tvAdvanced = new TVAdvancedRemote(tv);
+        Device tv = new TV2();
+        Device radio = new Radio2();
 
-        Radio radio = new Radio();
-        RadioBasicRemote radioBasic = new RadioBasicRemote(radio);
-        RadioAdvancedRemote radioAdvanced = new RadioAdvancedRemote(radio);
+        BasicRemote tvBasic = new BasicRemote(tv);
+        AdvancedRemote tvAdvanced = new AdvancedRemote(tv);
+        BasicRemote radioBasic = new BasicRemote(radio);
+        AdvancedRemote radioAdvanced = new AdvancedRemote(radio);
 
         // TV remotes
-        tvBasic.turnOn();
-        tvBasic.turnOff();
-        tvAdvanced.turnOn();
-        tvAdvanced.setVolume(15);
-        tvAdvanced.turnOff();
+        tvBasic.powerOn();
+        tvBasic.powerOff();
+        tvAdvanced.powerOn();
+        tvAdvanced.setVolume(20);
+        tvAdvanced.powerOff();
 
         // Radio remotes
-        radioBasic.turnOn();
-        radioBasic.turnOff();
-        radioAdvanced.turnOn();
-        radioAdvanced.setFrequency(101.2);
-        radioAdvanced.turnOff();
+        radioBasic.powerOn();
+        radioBasic.powerOff();
+        radioAdvanced.powerOn();
+        radioAdvanced.setFrequency(104.7);
+        radioAdvanced.powerOff();
     }
 }
