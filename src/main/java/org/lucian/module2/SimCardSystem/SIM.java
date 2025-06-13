@@ -1,9 +1,9 @@
 package org.lucian.module2.SimCardSystem;
 
 public class SIM {
-    private String phoneNumber;
+    private final String phoneNumber;
     private double credit;
-    private Call[] lastCalls;
+    private final Call[] lastCalls;
     private int callCount;
 
     public SIM(String phoneNumber) {
