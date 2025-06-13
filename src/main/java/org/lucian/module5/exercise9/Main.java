@@ -1,0 +1,49 @@
+package org.lucian.module5.exercise9;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Product> products = Arrays.asList(
+            new Product("iPhone", "Electronics", 999.99, 5000),
+            new Product("Galaxy S", "Electronics", 899.99, 4000),
+            new Product("MacBook", "Electronics", 1999.99, 2000),
+            new Product("Banana", "Groceries", 0.99, 10000),
+            new Product("Apple", "Groceries", 1.29, 8000),
+            new Product("Bread", "Groceries", 2.49, 6000),
+            new Product("T-shirt", "Clothing", 19.99, 3000),
+            new Product("Jeans", "Clothing", 49.99, 2500),
+            new Product("Jacket", "Clothing", 99.99, 1200)
+        );
+
+        // Group products by category
+        Map<String, List<Product>> byCategory = products
+            .stream()
+            .collect(Collectors.groupingBy(Product::getCategory));
+
+        System.out.println("Products grouped by category:");
+        byCategory.forEach((cat, list) -> {
+            System.out.println(cat + ": " + list);
+        });
+
+        // Find the top-selling product in each category
+        Map<String, Product> topSellingByCategory = products
+            .stream()
+            .collect(Collectors.groupingBy(
+                Product::getCategory,
+                Collectors.collectingAndThen(
+                    Collectors.maxBy(Comparator.comparingInt(Product::getSales)),
+                    opt -> opt.orElse(null)
+                )
+            ));
+            
+        System.out.println("\nTop-selling product in each category:");
+        topSellingByCategory.forEach((cat, prod) -> {
+            System.out.println(cat + ": " + prod);
+        });
+    }
+}
