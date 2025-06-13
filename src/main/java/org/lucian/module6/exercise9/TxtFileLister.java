@@ -16,10 +16,11 @@ public class TxtFileLister {
      * @param dirPath the path to the directory
      */
     public void printTxtFiles(String dirPath) {
-        try (Stream<Path> files = Files.list(Paths.get(dirPath))) {
-            files.filter(p -> p.getFileName().toString().endsWith(".txt"))
+        try (Stream<Path> files = Files.walk(Paths.get(dirPath))) {
+            files.filter(Files::isRegularFile)
+                 .filter(p -> p.getFileName().toString().endsWith(".txt"))
                  .sorted(Comparator.comparing(p -> p.getFileName().toString().toLowerCase()))
-                 .forEach(p -> System.out.println(p.getFileName()));
+                 .forEach(p -> System.out.println(p.toString()));
         } catch (IOException e) {
             System.err.println("Error listing files: " + e.getMessage());
         }
