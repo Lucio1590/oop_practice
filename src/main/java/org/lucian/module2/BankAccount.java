@@ -3,7 +3,10 @@ package org.lucian.module2;
 public class BankAccount {
     private double balance;
 
+    
+    @SuppressWarnings("unused")
     private String accountNumber;
+    @SuppressWarnings("unused")
     private String accountHolderName;
 
     // Constructor with all parameters

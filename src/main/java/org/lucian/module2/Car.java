@@ -1,9 +1,12 @@
 package org.lucian.module2;
 
 public class Car {
-    private String brand;
-    private String model;
-    private int year;
+    @SuppressWarnings("unused")
+    private final String brand;
+    @SuppressWarnings("unused")
+    private final String model;
+    @SuppressWarnings("unused")
+    private final int year;
 
     // constructor
     public Car(String brand, String model, int year) {

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.FileHandler;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
@@ -35,7 +36,7 @@ public class Main {
                 int num = Integer.parseInt(s);
                 result.add(num);
             } catch (NumberFormatException e) {
-                logger.warning("Could not parse '" + s + "' as integer. Skipping.");
+                logger.log(Level.WARNING, "Could not parse ''{0}'' as integer. Skipping.", s);
             }
         }
         return result;

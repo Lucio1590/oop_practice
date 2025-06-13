@@ -1,9 +1,9 @@
 package org.lucian.module2.ECommerce;
 
 public class Product {
-    private String code;
-    private String description;
-    private double price;
+    private final String code;
+    private final String description;
+    private final double price;
     private int stockQuantity;
 
     public Product(String code, String description, double price, int stockQuantity) {

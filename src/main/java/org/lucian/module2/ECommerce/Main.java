@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         // Create customers
         Customer customer1 = new Customer(1, "Alice", "alice@email.com", LocalDate.of(2024, 6, 1));
-        Customer customer2 = new Customer(2, "Bob", "bob@email.com", LocalDate.of(2024, 6, 10));
+        //Customer customer2 = new Customer(2, "Bob", "bob@email.com", LocalDate.of(2024, 6, 10));
 
         // Create products
         Product prod1 = new Product("P001", "Laptop", 1200.0, 5);

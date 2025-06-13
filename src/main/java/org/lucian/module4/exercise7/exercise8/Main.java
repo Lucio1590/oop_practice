@@ -1,6 +1,7 @@
 package org.lucian.module4.exercise7.exercise8;
 
 public class Main {
+    @SuppressWarnings("null")
     public static void main(String[] args) {
         try {
             // This code is intentionally designed to throw a NullPointerException

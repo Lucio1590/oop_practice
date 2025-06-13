@@ -48,6 +48,7 @@ public class Main {
         long start = System.nanoTime();
         for (int i = 0; i < 10_000; i++) {
             int idx = rand.nextInt(N);
+            @SuppressWarnings("unused")
             int val = arrayList.get(idx);
         }
         long arrayListAccess = System.nanoTime() - start;
@@ -55,6 +56,7 @@ public class Main {
         start = System.nanoTime();
         for (int i = 0; i < 10_000; i++) {
             int idx = rand.nextInt(N);
+            @SuppressWarnings("unused")
             int val = linkedList.get(idx);
         }
         long linkedListAccess = System.nanoTime() - start;
