@@ -1,0 +1,6 @@
+Hello, world!
+This is a test message.
+Java OOP is powerful!
+Hello, world!
+This is a test message.
+Java OOP is powerful!
