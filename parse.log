@@ -1,0 +1,4 @@
+Jun 13, 2025 2:25:07 AM org.lucian.module4.exercise3.Main parseNumbers
+WARNING: Could not parse 'abc' as integer. Skipping.
+Jun 13, 2025 2:25:07 AM org.lucian.module4.exercise3.Main parseNumbers
+WARNING: Could not parse '3.14' as integer. Skipping.
